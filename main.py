@@ -8,13 +8,16 @@ clearDataUrl = "chrome://settings/clearBrowserData"
 number = random.randint(1, 100000000000000000) 
 numAccCreatedThisRun = 0
 
-# Password of the accounts created 
-# NOTE: Will have 'h' at the end after the password
-password = "i9A1D3nj3a1hjhg"
+print("Do you want a single account or many accounts under one email address? ")
 
-# The Email that will be used to create new accounts goes below  
-email = "exampleemail+"    # Make sure to put the + at the end.
-emailEnd = "@mail.com"
+while repeat != "single" or "multi":
+    repeat = input("single/multi: ") 
+
+password = input("Please input the password you wish for the accounts. Note: It will end with an additional h afterwards \n")
+
+# The + at the end of the email makes the duplicates function.
+email = input("The beginning of the Email that will be used to create new accounts goes below. (everything before the @)\n" + "+") 
+emailEnd = input("Input the domain of the Email below. (@mail.com) \n")
 
 while True:
     
@@ -32,7 +35,7 @@ while True:
   erl.click(text='2008') 
 
   # Sets the Email of the "user"
-  erl.click(text='user@quizlet.com')
+  erl.click(text='user@email.com')
   erl.type(email)
   erl.type(number)
   erl.type(emailEnd)
@@ -51,4 +54,7 @@ while True:
   
   number = number + 1  # adds one to the current email address for the next account
   numAccCreatedThisRun = numAccCreatedThisRun + 1
-  print("account created!")
+  print(numAccCreatedThisRun + "account(s) created!")
+    
+  if repeat == "single":
+    break
