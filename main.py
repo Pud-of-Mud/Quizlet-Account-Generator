@@ -2,7 +2,7 @@ import webbot
 from webbot import Browser
 import time
 import random
-erl = webbot.Browser()
+erl = Browser()
 targetWebsiteUrl = "https://quizlet.com"
 clearDataUrl = "chrome://settings/clearBrowserData"
 number = random.randint(1, 100000000000000000) 
