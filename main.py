@@ -1,4 +1,5 @@
 import webbot
+from webbot import Browser
 import time
 import random
 erl = webbot.Browser()
